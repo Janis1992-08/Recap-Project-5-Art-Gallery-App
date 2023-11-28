@@ -5,8 +5,6 @@ export default function detailPage({ pieces }) {
   const router = useRouter();
   const { slug } = router.query;
 
-  console.log(slug);
-
   const selectedPiece = pieces.find((piece) => piece.slug === slug);
   console.log(selectedPiece);
 
@@ -18,8 +16,8 @@ export default function detailPage({ pieces }) {
     <>
       {selectedPiece && (
         <ArtPieceDetails
-          image={selectedPiece.image}
-          title={selectedPiece.title}
+          image={selectedPiece.imageSource}
+          title={selectedPiece.name}
           artist={selectedPiece.artist}
           year={selectedPiece.year}
           genre={selectedPiece.genre}
