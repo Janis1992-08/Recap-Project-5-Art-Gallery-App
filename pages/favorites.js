@@ -16,3 +16,7 @@ export default function FavoritesPage() {
     </>
   );
 };
+
+// TODO 
+// enter favorites Link to Navigation: <Link href="/favorites">Favorites</Link>
+// Implement favorite button to ArtPieces component
