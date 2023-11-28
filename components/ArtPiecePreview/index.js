@@ -1,7 +1,7 @@
 import Image from "next/image";
 import FavoriteButton from "../FavoriteButton/index.js";
 
-export default function ArtPiecePreview({ image, title, artist }) {
+export default function ArtPiecePreview({ image, title, artist, onHandleFavorite, isFavorite }) {
   return (
     <div>
       <h1>{title}</h1>

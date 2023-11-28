@@ -28,7 +28,7 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <GlobalStyle />
-      <Component {...pageProps} artPieceInfo={artPiecesInfo} onHandle={handleFavorite} />
+      <Component {...pageProps} artPieceInfo={artPiecesInfo} onHandleFavorite={handleFavorite} />
     </>
   );
 }
