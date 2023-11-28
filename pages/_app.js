@@ -18,16 +18,17 @@ const fetcher = async (url) => {
 };
 
 export default function App({ Component, pageProps }) {
-  const { data: pieces, error, isLoading, mutate } = useSWR(URL, fetcher);
+  const { data: pieces, error, isLoading } = useSWR(URL, fetcher);
 
-  if (error) return <p>Failed to load</p>;
+  if (error) return <p>{error.message}</p>;
   if (isLoading) return <p>loading...</p>;
 
   return (
     <SWRConfig value={{ fetcher }}>
-      <GlobalStyle />
-      <Component {...pageProps} pieces={pieces} />
-      <Layout />
+      <Layout>
+        <GlobalStyle />
+        <Component {...pageProps} pieces={pieces} />
+      </Layout>
     </SWRConfig>
   );
 }
