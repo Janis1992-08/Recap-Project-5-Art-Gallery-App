@@ -1,7 +1,6 @@
-import ArtPieces from "@/components/ArtPieces/index";
 import Spotlight from "@/components/Spotlight";
 
-export default function HomePage({ pieces }) {
+export default function SpotlightPage({ pieces }) {
   function getRandomElement(pieces) {
     const randomElement = Math.floor(Math.random() * pieces.length);
 
@@ -17,7 +16,6 @@ export default function HomePage({ pieces }) {
         image={randomPiece.imageSource}
         artist={randomPiece.artist}
       ></Spotlight>
-      <ArtPieces pieces={pieces}></ArtPieces>
     </main>
   );
 }
