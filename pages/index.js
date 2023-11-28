@@ -23,16 +23,21 @@ export default function HomePage() {
   if (error) return <p>Failed to load</p>;
   if (isLoading) return <p>loading...</p>;
 
+  function getRandomElement(pieces) {
+    const randomElement = Math.floor(Math.random() * pieces.length);
 
+    return pieces[randomElement]
+    
+  }
 
+  const randomPiece = getRandomElement(pieces);
 
 
   return (
     <main>
       <h1>ART Gallery</h1>
+      <Spotlight image={randomPiece.imageSource} artist={randomPiece.artist}></Spotlight>
       <ArtPieces pieces={pieces}></ArtPieces>
-      <ArtPiecePreview title={pieces.name}></ArtPiecePreview>
-      <Spotlight pieces={pieces}></Spotlight>
     </main>
   );
 }
