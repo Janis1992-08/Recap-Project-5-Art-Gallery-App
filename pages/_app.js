@@ -1,16 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import useLocalStorageState from "use-local-storage-state";
 import GlobalStyle from "../styles";
 
 export default function App({ Component, pageProps }) {
-  const [artPiecesInfo, setArtPiecesInfo] = useState([]);
-  
+  const [artPiecesInfo, setArtPiecesInfo] = useLocalStorageState([]);
+
   /*useLocalStorageState("art-piece-info", {
     defaultValue: [] }
   );*/
 
   function handleFavorite(slug) {
-
     const artPiece = artPiecesInfo.find((piece) => piece.slug === slug);
     if (artPiece) {
       setArtPiecesInfo(
@@ -23,12 +22,15 @@ export default function App({ Component, pageProps }) {
     } else {
       setArtPiecesInfo([...artPiecesInfo, { slug, isFavorite: true }]);
     }
-
   }
   return (
     <>
       <GlobalStyle />
-      <Component {...pageProps} artPieceInfo={artPiecesInfo} onHandleFavorite={handleFavorite} />
+      <Component
+        {...pageProps}
+        artPieceInfo={artPiecesInfo}
+        onHandleFavorite={handleFavorite}
+      />
     </>
   );
 }
