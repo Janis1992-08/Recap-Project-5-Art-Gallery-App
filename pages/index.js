@@ -1,6 +1,6 @@
 import useSWR from "swr";
-import ArtPieces from "@/components/ArtPieces/ArtPieces";
-import ArtPiecePreview from "@/components/ArtPiecePreview/ArtPiecePreview";
+import ArtPieces from "@/components/ArtPieces/index";
+import ArtPiecePreview from "@/components/ArtPiecePreview";
 import Spotlight from "@/components/Spotlight";
 
 const URL = "https://example-apis.vercel.app/api/art";
