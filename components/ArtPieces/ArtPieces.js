@@ -3,16 +3,18 @@ import ArtPiecePreview from "../ArtPiecePreview/ArtPiecePreview";
 export default function ArtPieces({ pieces }) {
   return (
     <>
-      {pieces.map((piece) => {
-        return (
+    <ul>
+      {pieces.map((piece, index) => (
+        <li key={index}>
           <ArtPiecePreview
             title={piece.name}
             artist={piece.artist}
             image={piece.imageSource}
-          ></ArtPiecePreview>
-        );
-      })}
-    </>
-  );
-  console.log(piece);
-}
+          />
+        </li>
+      ))}
+    </ul>
+      </>
+  );}
+
+console.log(ArtPieces)

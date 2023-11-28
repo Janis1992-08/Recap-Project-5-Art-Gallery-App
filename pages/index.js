@@ -26,12 +26,13 @@ export default function HomePage() {
 
 
 
+
   return (
-    <div>
+    <main>
       <h1>ART Gallery</h1>
       <ArtPieces pieces={pieces}></ArtPieces>
       <ArtPiecePreview title={pieces.name}></ArtPiecePreview>
       <Spotlight pieces={pieces}></Spotlight>
-    </div>
+    </main>
   );
 }
